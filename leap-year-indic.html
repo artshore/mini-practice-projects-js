@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leap Year Indicator</title>
+  </head>
+  <body>
+    <script>
+      var year = prompt("What year?");
+      alert(isItLeap(year));
+
+      function isItLeap(year) {
+        if (year % 400 === 0) {
+          return "It's a leap year.";
+        } else {
+          if (year % 4 === 0) {
+            if (year % 100 === 0) {
+              return "Not a leap year.";
+            } else {
+              return "It's a leap year.";
+            }
+          } else {
+            return "Not a leap year.";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
