@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Love Calculator</title>
+  </head>
+  <body>
+    <script>
+      var crusher = prompt("What is your name?");
+      var crushy = prompt("What is your crush's name?");
+
+      alert(stringGen());
+      function randomGen() {
+        var randomNum = Math.random();
+        return Math.floor(randomNum * 101);
+      }
+      function stringGen() {
+        var likelihood = randomGen();
+        if (likelihood <= 10) {
+          return "No way Jose!";
+        } else if (likelihood > 10 && likelihood < 50) {
+          return "Worth a shot...";
+        } else if (likelihood >= 50 && likelihood < 90) {
+          return "I'm rooting for you. Definitely take your shot!";
+        } else {
+          return "You guys love each other like Kanye love Kanye! 🤩";
+        }
+      }
+    </script>
+  </body>
+</html>
