@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fibonacci Sequence</title>
+  </head>
+  <body>
+    <script>
+      fibonacciGen(10);
+      function fibonacciGen(par) {
+        var sequence = [];
+        for (var i = 0; par > sequence.length; i++) {
+          if (sequence.length < 2) {
+            sequence.push(i);
+          } else {
+            sequence.push(sequence[i - 1] + sequence[i - 2]);
+          }
+        }
+        console.log(sequence);
+      }
+    </script>
+  </body>
+</html>
