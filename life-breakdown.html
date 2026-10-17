@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Life Breakdown</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous" />
+  </head>
+  <body class="container">
+    <main class="">
+      <h1>Life Breakdown!</h1>
+      <p>Do you want to know how many weeks you have left?</p>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"></script>
+    <script>
+      function main() {
+        var yearsOld = prompt("How old are you?");
+        var [days, weeks, months] = yearsSpent(yearsOld);
+        var [daysLeft, weeksLeft, monthsLeft] = yearsLeft(yearsOld);
+
+        alert(
+          stringGenerator(days, weeks, months, daysLeft, weeksLeft, monthsLeft),
+        );
+      }
+
+      function yearsSpent(yearsOld) {
+        var days = yearsToDays(yearsOld);
+        var weeks = yearsToWeeks(yearsOld);
+        var months = yearsToMonths(yearsOld);
+        return [days, weeks, months];
+      }
+
+      function yearsLeft(yearsOld) {
+        var daysLeft = yearsToDays(90) - yearsToDays(yearsOld);
+        var weeksLeft = yearsToWeeks(90) - yearsToWeeks(yearsOld);
+        var monthsLeft = yearsToMonths(90) - yearsToMonths(yearsOld);
+        return [daysLeft, weeksLeft, monthsLeft];
+      }
+
+      function stringGenerator(
+        days,
+        weeks,
+        months,
+        daysLeft,
+        weeksLeft,
+        monthsLeft,
+      ) {
+        return (
+          "You have seen " +
+          days +
+          " days , " +
+          weeks +
+          " weeks and " +
+          months +
+          " months in your life. You have " +
+          daysLeft +
+          " days, " +
+          weeksLeft +
+          " weeks and " +
+          monthsLeft +
+          " months left to live!"
+        );
+      }
+
+      function yearsToDays(yearsOld) {
+        return yearsOld * 365;
+      }
+
+      function yearsToWeeks(yearsOld) {
+        return yearsOld * 52;
+      }
+
+      function yearsToMonths(yearsOld) {
+        return yearsOld * 12;
+      }
+      main();
+    </script>
+  </body>
+</html>
